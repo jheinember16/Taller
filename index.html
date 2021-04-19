@@ -3,104 +3,67 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>JUEGO DE CARTAS</title>
-<link rel="stylesheet" href="estilo.css">	
-	
+<link rel="stylesheet" href="estilo.css">		
 </head>
-
+	<header> 
+			<img class="fondo" src="img/fondo.jpg">
+			<h1> MAZO CARTAS</h1> 
+	</header> 
 <body>
-<header> 
-	<hgroup> 
-		<h1 >MAZO CARTAS</h1> 
-	</hgroup> 
-</header> 
-<
-<section> 
-	<table id="tabla">		
 
-		<section><button class="boton1"></button></section>
-		<section><button class="boton2"></button></section>
-		<section><button class="boton3"></button></section>
-		<section><button class="boton4"></button></section>
-		<section><button class="boton5"></button></section>
-		<section><button class="boton6"></button></section>
-		<section><button class="boton7"></button></section>
-		<section><button class="boton8"></button></section>
-		<section><button class="boton9"></button></section>
-		<section><button class="boton10"></button></section>
-		<section><button class="boton11"></button></section>
-		<section><button class="boton12"></button></section>
-		<section><button class="boton13"></button></section>		
-			
-	</table>
-
-
+	<section> 
+		<div class="contenedor">
+			<button class="boton1"></button>
+			<button class="boton2"></button>
+			<button class="boton3"></button>
+			<button class="boton4"></button>
+			<button class="boton5"></button>
+			<button class="boton6"></button>
+			<button class="boton7"></button>
+			<button class="boton8"></button>
+			<button class="boton9"></button>
+			<button class="boton10"></button>
+			<button class="boton11"></button>
+			<button class="boton12"></button>
+			<button class="boton13"></button>
+		</div>
 	</section> 
 
-
-	<aside> 
-		<h2></h2>
-		 
-	</aside> 
-
-	<aside> 
-		<h2></h2>
-		 
-	</aside> 
+	<aside> 	
+		<h2>Listado de Cartas</h2>
+	</aside>
 
 
+	<aside>
+		<table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Carta</th>
+                  <th>Cant</th>
+                </tr>
+              </thead>
+         </table>
+    </aside> 	
 
 
+	<aside>		
+		<form>
+			<h4>Número</h4>
+            <input type="text" name="numero" id="numero" maxlength="50" placeholder="Digite el numero de la carta" required>
+            <br/>
+                
+            <h4>Carta</h4>
+            <input type="text" name="carta" id="carta" maxlength="50" placeholder="Digite el nombre de la carta " required >
+            <br/>    
+            <br/>  
+
+            <button type="submit" class="btn">Guardar</button>
+
+		</form>
+	</aside>
+
+	<div class="clearfix"></div>
 </body>
 
-<script type="text/javascript">	
-
-	function cargarTabla(){
-
-		var url = "https://demo6497253.mockable.io/noticias";
-
-		fecth(url)
-			.then(response => response.json())
-			.then(data => generarTabla(data))
-		.catch(error =>{});	
-	}
-			
-
-	function generarTabla(json){
-
-
-		const tabla = document.getElementById("tabla");	
-
-	json.noticias.forEach ( xx =>{
-		console.log(xx);
-		const tr = document.createElement('tr');
-		const tdId = document.createElement('td');
-			tdId.textContent = xx.id;
-			tr.appendChild(tdId);
-		const tdTitulo = document.createElement('td');
-			tdTitulo.textContent = xx.titulo;
-			tr.appendChild(tdTitulo);
-		const tdCategoria = document.createElement('td');
-			tdCategoria.textContent = xx.categoria;
-			tr.appendChild(tdCategoria);
-		const tdDescripcion = document.createElement('td');
-			tdDescripcion.textContent = xx.descripcion;
-			tr.appendChild(tdDescripcion);
-		const tdDetalle = document.createElement('td');
-			tdDetalle.textContent = xx.detalle;
-			tr.appendChild(tdDetalle);
-
-		const tdFecha = document.createElement('td');
-			tdFecha.textContent = xx.fecha;
-			tr.appendChild(tdFecha);
-		const tdImagen = document.createElement('td');
-			tdImagen.textContent = xx.imagen;
-			tr.appendChild(tdImagen);			
-		tabla.tBodies[0].appendChild(tr);
-		
-		});
-
-	}
-
-	document.getElementById("boton").onclick = cargarTabla;
-</script>
 </html>
