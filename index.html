@@ -7,7 +7,7 @@
 </head>
 	<header> 
 			<img class="fondo" src="img/fondo.jpg">
-			<h1> MAZO CARTAS</h1> 
+			<h1> JUEGO DE MAZO CARTAS</h1> 
 	</header> 
 <body>
 
@@ -26,44 +26,46 @@
 			<button class="boton11"></button>
 			<button class="boton12"></button>
 			<button class="boton13"></button>
+		
+	</section> 	
+
+		<div class="contenedorAside">
+			
+			 <aside>
+                    <table id="table">
+                        <tr id="tr">
+                            <th>#</th>
+                            <th>Carta</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </table>
+
+             </aside> 
+
+			<aside>		
+				<form class="formulario">
+					<label for="lista">Número</label>
+                        <select id="lista" name="lista">
+                        <option disabled selected>Elija una opcion</option>
+                        </select>
+
+                        <hr>
+
+                        <label for="descripcion">Carta</label>
+                        <input type="text" placeholder="Digite la carta" id="descripcion" name="descripcion">
+                        <br>
+                        <br>
+
+                        <input type="button" id="guardar" value="Guardar" onclick="guardarCarta()">
+
+				</form>
+			</aside>			
+
 		</div>
-	</section> 
 
-	<aside> 	
-		<h2>Listado de Cartas</h2>
-	</aside>
+<script src="js/accion1.js"></script>
+<script src="js/accion2.js"></script>
 
 
-	<aside>
-		<table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Carta</th>
-                  <th>Cant</th>
-                </tr>
-              </thead>
-         </table>
-    </aside> 	
-
-
-	<aside>		
-		<form>
-			<h4>Número</h4>
-            <input type="text" name="numero" id="numero" maxlength="50" placeholder="Digite el numero de la carta" required>
-            <br/>
-                
-            <h4>Carta</h4>
-            <input type="text" name="carta" id="carta" maxlength="50" placeholder="Digite el nombre de la carta " required >
-            <br/>    
-            <br/>  
-
-            <button type="submit" class="btn">Guardar</button>
-
-		</form>
-	</aside>
-
-	<div class="clearfix"></div>
 </body>
-
 </html>
